@@ -7,7 +7,7 @@ function play(){
     continueGame();
 }
 function randomLetter() {
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ/';
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     return letters[Math.floor(Math.random() * letters.length)];
 }
 function setLetterBg(letter) {
@@ -36,9 +36,17 @@ function handleKeyButtonClick(event) {
         console.log('Score:', score);
         document.querySelector('.score').textContent = ` ${score}`;
         resetLetterBg(displayedLetter);
+        document.querySelector('.artboard').classList.add('bg-green-600');
+        setTimeout(() => {
+            document.querySelector('.artboard').classList.remove('bg-green-600');
+        }, 300);
         continueGame();
     } else {
         life -= 1;
+        document.querySelector('.artboard').classList.add('bg-red-600');
+        setTimeout(() => {
+            document.querySelector('.artboard').classList.remove('bg-red-600');
+        }, 300);
         if (life <= 0) {
             console.log('Wrong key pressed! You have no lives left!');
             console.log('Game Over');
@@ -60,6 +68,7 @@ function handleKeyButtonClick(event) {
     }
 }
 document.addEventListener('keyup', handleKeyButtonClick);
+
 function playAgain() {
     score = 0;
     life = 3;
@@ -68,12 +77,11 @@ function playAgain() {
     console.log('Game Restarted again');
 }
 function reset() {
+    console.log('Game Reset');
     score = 0;
     life = 3;
+    resetLetterBg(document.querySelector('.letter').textContent);
     document.querySelector('.result').classList.add('hidden');
-    document.querySelector('.play').classList.add('hidden');
     document.querySelector('.home').classList.remove('hidden');
-    document.querySelector('.score').textContent = '0';
-    document.querySelector('.life').textContent = '3';
-    console.log('Game Reset');
- } 
+    
+ }
