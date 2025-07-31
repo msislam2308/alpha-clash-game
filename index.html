@@ -13,7 +13,7 @@
 <body class="poppins-regular">
     <main
         class="bg-black bg-[url(images/background.png)] bg-no-repeat bg-center text-white min-h-screen flex flex-col items-center justify-center text-center">
-        <section class="home space-y-20 p-5" >
+        <section class="home space-y-20 p-5">
             <h1 class="text-9xl  anton-regular">Alphabet Clash</h1>
             <p class="text-2xl ">Unleash Your Keyboard Kung Fu: Press "button" to Play!</p>
             <button onclick="play()" class="btn btn-primary bg-white text-black ">Play Now</button>
@@ -64,17 +64,18 @@
             </div>
             <div class="flex justify-between">
                 <button class="btn btn-active btn-secondary rounded-full">Life ❤️<span class="life">3</span></button>
-                <button class="btn btn-active btn-info rounded-full text-white">Score 🥇<span class="score">0</span></button>
+                <button class="btn btn-active btn-info rounded-full text-white">Score 🥇<span
+                        class="score">0</span></button>
             </div>
         </section>
-        <section class="result p-5 hidden" >
+        <section class="result p-5 hidden">
             <div class="space-y-5 bg-[#ffffff33] rounded-2xl p-10">
                 <h1 class="text-8xl anton-regular">
                     <span class="font-extrabold">Score 🥇<span class="fscore">0</span></span>
                 </h1>
-                <button onclick="playAgain()" class="btn btn-primary bg-green-600  mt-10">Play Again</button>
+                <button onclick="playAgain()" class="btn btn-primary bg-green-600 mt-10">Play Again</button>
                 <p class="mt-5">Practise Makes A Man Perfect</p>
-                <button onclick="home()" class="btn btn-primary bg-red-600  mt-5">Exit</button>
+                <button onclick="reset()" class="btn btn-primary bg-red-600  mt-5">Exit</button>
             </div>
         </section>
     </main>
