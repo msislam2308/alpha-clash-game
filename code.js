@@ -1,6 +1,6 @@
 let score = 0;
 let life = 3;
-function play(){
+function play() {
     document.querySelector('.home').classList.add('hidden');
     document.querySelector('.play').classList.remove('hidden');
     console.log('Game Started');
@@ -28,6 +28,15 @@ function continueGame() {
 
 
 function handleKeyButtonClick(event) {
+    const playerPressed = event.key;
+    if(playerPressed === 'Escape'){
+        console.log('Game Ended');
+        document.querySelector('.play').classList.add('hidden');
+        document.querySelector('.result').classList.remove('hidden');
+        document.querySelector('.home').classList.add('hidden');
+        document.querySelector('.fscore').textContent = ` ${score}`;
+        console.log('Final Score:', score);
+    }
     const pressedKey = event.key.toUpperCase();
     const displayedLetter = document.querySelector('.letter').textContent;
     if (pressedKey === displayedLetter) {
@@ -41,7 +50,8 @@ function handleKeyButtonClick(event) {
             document.querySelector('.artboard').classList.remove('bg-green-600');
         }, 300);
         continueGame();
-    } else {
+    }
+    else {
         life -= 1;
         document.querySelector('.artboard').classList.add('bg-red-600');
         setTimeout(() => {
@@ -58,7 +68,7 @@ function handleKeyButtonClick(event) {
             document.querySelector('.life').textContent = '3';
             document.querySelector('.score').textContent = '0';
         }
-        else{
+        else {
             console.log('Wrong key pressed! You lost a life!');
             console.log('Lives left:', life);
             document.querySelector('.life').textContent = `${life}`;
@@ -74,6 +84,8 @@ function playAgain() {
     life = 3;
     document.querySelector('.result').classList.add('hidden');
     document.querySelector('.play').classList.remove('hidden');
+    document.querySelector('.life').textContent = '3';
+    document.querySelector('.score').textContent = '0';
     console.log('Game Restarted again');
 }
 function reset() {
@@ -83,5 +95,6 @@ function reset() {
     resetLetterBg(document.querySelector('.letter').textContent);
     document.querySelector('.result').classList.add('hidden');
     document.querySelector('.home').classList.remove('hidden');
-    
- }
+
+}
+

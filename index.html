@@ -9,26 +9,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Alphabet Clash Game</title>
 </head>
-
 <body class="poppins-regular">
     <main
-        class="bg-black bg-[url(images/background.png)] bg-no-repeat bg-center text-white min-h-screen flex flex-col items-center justify-center text-center">
-        <section class="home space-y-20 p-5">
-            <h1 class="text-9xl  anton-regular">Alphabet Clash</h1>
-            <p class="text-2xl ">Unleash Your Keyboard Kung Fu: Press "button" to Play!</p>
-            <button onclick="play()" class="btn btn-primary bg-white text-black ">Play Now</button>
+        class="bg-black bg-[url(images/background.png)] bg-no-repeat bg-center text-white min-h-screen flex flex-col items-center justify-center text-center px-2">
+        <section class="home space-y-10 p-3 md:space-y-20 md:p-5">
+            <h1 class="text-5xl md:text-9xl anton-regular">Alphabet Clash</h1>
+            <p class="text-s md:text-2xl">Unleash Your Keyboard Kung Fu: Press "button" to Play!</p>
+            <button onclick="play()" class="btn btn-primary bg-white text-black text-base md:text-xl">Play Now</button>
         </section>
-        <section class="play space-y-20 p-5 hidden">
-            <div class="artboard border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] h-[320px] w-[1080px]">
+        <section class="play space-y-10 p-3 md:space-y-20 md:p-5 hidden">
+            <div class="artboard border-[6px] md:border-[20px] rounded-2xl border-[#010313CC] bg-[#FFFFFFB3] h-[180px] w-full max-w-[98vw] md:h-[320px] md:w-[1080px] mx-auto">
                 <div class="flex justify-center">
-                    <p class="bg-[#010313CC] pt-0 p-4 rounded-b-lg">Don't watch keyboard while playing.....</p>
+                    <p class="bg-[#010313CC] pt-0 p-2 md:p-4 rounded-b-lg text-xs md:text-base">Don't watch keyboard while playing.....</p>
                 </div>
                 <div class="flex justify-center items-center h-full">
-                    <p class="text-black text-9xl font-extrabold"><span class="letter"></span></p>
+                    <p class="text-black text-4xl md:text-9xl font-extrabold"><span class="letter"></span></p>
                 </div>
             </div>
             <div class="text-black">
-                <div class="my-1 flex w-full justify-center gap-1 ">
+                <div class="my-1 flex w-full justify-center gap-1 flex-wrap">
                     <kbd id="q" class="kbd">q</kbd>
                     <kbd id="w" class="kbd">w</kbd>
                     <kbd id="e" class="kbd">e</kbd>
@@ -40,7 +39,7 @@
                     <kbd id="o" class="kbd">o</kbd>
                     <kbd id="p" class="kbd">p</kbd>
                 </div>
-                <div class="my-1 flex w-full justify-center gap-1">
+                <div class="my-1 flex w-full justify-center gap-1 flex-wrap">
                     <kbd id="a" class="kbd">a</kbd>
                     <kbd id="s" class="kbd">s</kbd>
                     <kbd id="d" class="kbd">d</kbd>
@@ -51,7 +50,7 @@
                     <kbd id="k" class="kbd">k</kbd>
                     <kbd id="l" class="kbd">l</kbd>
                 </div>
-                <div class="my-1 flex w-full justify-center gap-1">
+                <div class="my-1 flex w-full justify-center gap-1 flex-wrap">
                     <kbd id="z" class="kbd">z</kbd>
                     <kbd id="x" class="kbd">x</kbd>
                     <kbd id="c" class="kbd">c</kbd>
@@ -62,21 +61,20 @@
                     <kbd id="/" class="kbd">/</kbd>
                 </div>
             </div>
-            <div class="flex justify-between">
-                <button class="btn btn-active btn-secondary rounded-full">Life ❤️<span class="life">3</span></button>
-                <button class="btn btn-active btn-info rounded-full text-white">Score 🥇<span
-                        class="score">0</span></button>
+            <div class="flex flex-col md:flex-row justify-between gap-2 md:gap-10">
+                <button class="btn btn-active btn-secondary rounded-full text-base md:text-xl">Life ❤️<span class="life">3</span></button>
+                <button class="btn btn-active btn-info rounded-full text-white text-base md:text-xl">Score 🥇<span class="score">0</span></button>
             </div>
         </section>
-        <section class="result p-5 hidden">
-            <div class="space-y-5 bg-[#ffffff33] rounded-2xl p-10">
-                <h1 class="text-8xl anton-regular">
-                    <div class="mb-10"><span class="text-red-600">Game Over</span><br></div>
+        <section class="result p-3 md:p-5 hidden">
+            <div class="space-y-5 bg-[#ffffff33] rounded-2xl p-5 md:p-10">
+                <h1 class="text-4xl md:text-8xl anton-regular">
+                    <div class="mb-5 md:mb-10"><span class="text-red-600">Game Over</span><br></div>
                     <span class="font-extrabold">Score 🥇<span class="fscore">0</span></span>
                 </h1>
-                <button onclick="playAgain()" class="btn btn-primary bg-green-600 mt-10">Play Again</button>
-                <p class="mt-5">Practise Makes A Man Perfect</p>
-                <button onclick="reset()" class="btn btn-primary bg-red-600  mt-5">Exit</button>
+                <button onclick="playAgain()" class="btn btn-primary bg-green-600 mt-5 md:mt-10 text-base md:text-xl">Play Again</button>
+                <p class="mt-2 md:mt-5 text-sm md:text-base">Practise Makes A Man Perfect</p>
+                <button onclick="reset()" class="btn btn-primary bg-red-600 mt-2 md:mt-5 text-base md:text-xl">Exit</button>
             </div>
         </section>
     </main>
